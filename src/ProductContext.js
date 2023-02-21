@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useState } from "react";
 import axios from "axios";
 
 export const productContext = createContext();
@@ -56,15 +56,15 @@ const ProductContextProvider = ({ children }) => {
     getProducts();
   };
 
-  // const handleTop = () => {
-  //   if (top) {
-  //     setTop("-100%");
-  //   } else {
-  //     setTop("0");
-  //   }
-  // };
+  const handleTop = () => {
+    if (top) {
+      setTop(0);
+    } else {
+      setTop("-100%");
+    }
+  };
 
-  // const [top, setTop] = useState("-100%");
+  const [top, setTop] = useState("-100%");
 
   return (
     <productContext.Provider
@@ -74,10 +74,10 @@ const ProductContextProvider = ({ children }) => {
         deleteProduct: deleteProduct,
         editProduct: editProduct,
         saveProduct: saveProduct,
-        // handleTop: handleTop,
+        handleTop: handleTop,
         productToEdit: state.productToEdit,
         products: state.products,
-        // top: top,
+        top: top,
       }}
     >
       {children}

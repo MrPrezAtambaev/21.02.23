@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { indigo } from "@mui/material/colors";
-// import AddProduct from "./AddProduct";
+import AddProduct from "./AddProduct";
 import ProductList from "./ProductList";
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
         <Typography component="div" variant="h1" sx={homePageStyles}>
           Products
         </Typography>
-        {/* <AddProduct /> */}
+        <AddProduct />
       </Box>
       <ProductList />
     </Box>

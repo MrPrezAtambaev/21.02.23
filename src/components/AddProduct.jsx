@@ -4,10 +4,8 @@ import { green, red } from "@mui/material/colors";
 import { useContext } from "react";
 import { productContext } from "../ProductContext";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
-  const navigate = useNavigate();
   const indigoTheme = createTheme({
     palette: {
       primary: {
@@ -61,8 +59,13 @@ const AddProduct = () => {
 
   const inpsStyles = {
     display: "flex",
-    margin: "15vmin auto",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    maxWidth: "60%",
+    mt: 5,
+    position: "absolute",
+    right: "5%",
+    transition: "200ms",
+    top: top,
   };
   return (
     <Box>
@@ -97,10 +100,10 @@ const AddProduct = () => {
         <Button
           variant="contained"
           theme={indigoTheme}
+          onChange={handleInput}
           sx={{ mx: 2 }}
           onClick={() => {
             handleSave(product);
-            navigate("/");
           }}
         >
           Create
